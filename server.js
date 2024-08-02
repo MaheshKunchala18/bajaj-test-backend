@@ -6,14 +6,14 @@ const port = process.env.PORT || 3001;
 app.use(bodyParser.json());
 
 
-app.get('/details', (req, res) => {
+app.get('/bfhl', (req, res) => {
     return res.status(200).json({
         operation_code: 1
     });
 });
 
 
-app.post('/details', (req, res) => {
+app.post('/bfhl', (req, res) => {
     try {
         const { data } = req.body;
 
