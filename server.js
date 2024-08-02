@@ -1,5 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import serverless from 'serverless-http';
 
 const app = express();
 const port = process.env.PORT || 3001;
@@ -62,6 +63,9 @@ app.post('/bfhl', (req, res) => {
 });
 
 
-app.listen(port, () => {
-    console.log(`Server is running on port: ${port}`);
-});
+// app.listen(port, () => {
+//     console.log(`Server is running on port: ${port}`);
+// });
+
+
+export const handler = serverless(app);
